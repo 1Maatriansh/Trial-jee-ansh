@@ -1,0 +1,87 @@
+/**
+ * Interface Demo Test — NOT JEE Content
+ * Strictly for verifying timer accuracy, five-state question palette,
+ * state persistence across reloads, and result calculation.
+ */
+export default {
+  id: 'test-demo-interface',
+  title: 'Interface demo — not JEE content',
+  isDemo: true,
+  durationMinutes: 15,
+  marking: {
+    correct: 4,
+    wrong: -1,
+  },
+  sections: [
+    {
+      id: 'sec-demo',
+      name: 'Sample Section',
+      questions: [
+        {
+          id: 'q-demo-1',
+          number: 1,
+          type: 'mcq',
+          statement: 'Sample Demo Question 1: What is the derivative of x² with respect to x?',
+          options: [
+            { id: 'opt-a', text: 'x' },
+            { id: 'opt-b', text: '2x' },
+            { id: 'opt-c', text: 'x² / 2' },
+            { id: 'opt-d', text: '2' },
+          ],
+          answer: 'opt-b',
+          explanation: 'The power rule states that d/dx [x^n] = n * x^(n-1). For n = 2, d/dx [x²] = 2x.',
+        },
+        {
+          id: 'q-demo-2',
+          number: 2,
+          type: 'mcq',
+          statement: 'Sample Demo Question 2: Which quantity is dimensionless?',
+          options: [
+            { id: 'opt-a', text: 'Velocity' },
+            { id: 'opt-b', text: 'Force' },
+            { id: 'opt-c', text: 'Refractive index' },
+            { id: 'opt-d', text: 'Acceleration' },
+          ],
+          answer: 'opt-c',
+          explanation: 'Refractive index is the ratio of speeds of light in two media (c / v) and is dimensionless.',
+        },
+        {
+          id: 'q-demo-3',
+          number: 3,
+          type: 'mcq',
+          statement: 'Sample Demo Question 3: For an ideal gas undergoing an isothermal process, what remains constant?',
+          options: [
+            { id: 'opt-a', text: 'Pressure' },
+            { id: 'opt-b', text: 'Volume' },
+            { id: 'opt-c', text: 'Temperature' },
+            { id: 'opt-d', text: 'Entropy' },
+          ],
+          answer: 'opt-c',
+          explanation: 'An isothermal process occurs at constant temperature (ΔT = 0).',
+        },
+        {
+          id: 'q-demo-4',
+          number: 4,
+          type: 'numerical',
+          statement: 'Sample Demo Question 4: If a car starts from rest with uniform acceleration of 2 m/s², what is its speed (in m/s) after 5 seconds?',
+          answer: '10',
+          explanation: 'Using v = u + at with u = 0, a = 2, and t = 5: v = 0 + 2(5) = 10 m/s.',
+        },
+        {
+          id: 'q-demo-5',
+          number: 5,
+          type: 'mcq',
+          statement: 'Sample Demo Question 5: What is the magnitude of the unit vector i + j + k?',
+          options: [
+            { id: 'opt-a', text: '1' },
+            { id: 'opt-b', text: '√2' },
+            { id: 'opt-c', text: '√3' },
+            { id: 'opt-d', text: '3' },
+          ],
+          answer: 'opt-c',
+          explanation: '|v| = √(1² + 1² + 1²) = √3.',
+        },
+      ],
+    },
+  ],
+};

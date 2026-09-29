@@ -1,0 +1,217 @@
+/* Ansh JEE — Themes
+ * Five complete design systems. Applied via [data-theme="<id>"] on <html>.
+ * All pairs verified for WCAG AA contrast (4.5:1 body, 3:1 large/UI).
+ * The intro always renders in Mono regardless of user choice.
+ */
+
+/* ── Mono (default, "Dark") ─────────────────────────────────────────── */
+[data-theme="mono"],
+:root {
+  color-scheme: dark;
+
+  --bg:               #050505;
+  --surface:          #0d0d0d;
+  --surface-elevated: #141414;
+
+  --text-primary:     #f5f5f5;
+  --text-secondary:   #aaaaaa;
+  --text-muted:       #7a7a7a;
+
+  --border:           #262626;
+  --border-strong:    #3d3d3d;
+
+  --accent:           #ffffff;
+  --accent-hover:     #d9d9d9;
+  --accent-contrast:  #050505;
+
+  --success:          #6fbf8b;
+  --warning:          #d9a441;
+  --danger:           #e26d6d;
+
+  --focus-ring:       0 0 0 2px #050505, 0 0 0 4px #ffffff;
+
+  --grid:             rgba(255, 255, 255, .04);
+  --grain-opacity:    .05;
+
+  --shadow-1:         none;
+  --shadow-2:         0 8px 24px rgba(0, 0, 0, .5);
+
+  --chart-1:          #ffffff;
+  --chart-2:          #aaaaaa;
+  --chart-3:          #6fbf8b;
+
+  --selection-bg:     rgba(255, 255, 255, .2);
+  --selection-color:  #ffffff;
+
+  /* Scrollbar */
+  --scrollbar-track:  #0d0d0d;
+  --scrollbar-thumb:  #3d3d3d;
+}
+
+/* ── Paper ("Light") ────────────────────────────────────────────────── */
+[data-theme="paper"] {
+  color-scheme: light;
+
+  --bg:               #f6f3ee;
+  --surface:          #fbf9f5;
+  --surface-elevated: #ffffff;
+
+  --text-primary:     #141414;
+  --text-secondary:   #4a4a4a;
+  --text-muted:       #666666;
+
+  --border:           #e2ddd4;
+  --border-strong:    #c9c2b6;
+
+  --accent:           #141414;
+  --accent-hover:     #333333;
+  --accent-contrast:  #f6f3ee;
+
+  --success:          #2f7d4f;
+  --warning:          #a86a00;
+  --danger:           #b3362f;
+
+  --focus-ring:       0 0 0 2px #f6f3ee, 0 0 0 4px #141414;
+
+  --grid:             rgba(0, 0, 0, .05);
+  --grain-opacity:    .035;
+
+  --shadow-1:         0 1px 2px rgba(20, 20, 20, .06);
+  --shadow-2:         0 8px 24px rgba(20, 20, 20, .10);
+
+  --chart-1:          #141414;
+  --chart-2:          #4a4a4a;
+  --chart-3:          #2f7d4f;
+
+  --selection-bg:     rgba(20, 20, 20, .12);
+  --selection-color:  #141414;
+
+  --scrollbar-track:  #f0ece5;
+  --scrollbar-thumb:  #c9c2b6;
+}
+
+/* ── Midnight ───────────────────────────────────────────────────────── */
+[data-theme="midnight"] {
+  color-scheme: dark;
+
+  --bg:               #060a12;
+  --surface:          #0b111c;
+  --surface-elevated: #111927;
+
+  --text-primary:     #e8edf5;
+  --text-secondary:   #a3afc2;
+  --text-muted:       #7a879c;
+
+  --border:           #1c2636;
+  --border-strong:    #2d3b52;
+
+  --accent:           #8fb4ff;
+  --accent-hover:     #b3cbff;
+  --accent-contrast:  #060a12;
+
+  --success:          #6cc39a;
+  --warning:          #d8a94a;
+  --danger:           #e5787a;
+
+  --focus-ring:       0 0 0 2px #060a12, 0 0 0 4px #8fb4ff;
+
+  --grid:             rgba(143, 180, 255, .05);
+  --grain-opacity:    .05;
+
+  --shadow-1:         none;
+  --shadow-2:         0 8px 24px rgba(0, 0, 0, .55);
+
+  --chart-1:          #8fb4ff;
+  --chart-2:          #a3afc2;
+  --chart-3:          #6cc39a;
+
+  --selection-bg:     rgba(143, 180, 255, .2);
+  --selection-color:  #e8edf5;
+
+  --scrollbar-track:  #0b111c;
+  --scrollbar-thumb:  #2d3b52;
+}
+
+/* ── Ember ──────────────────────────────────────────────────────────── */
+[data-theme="ember"] {
+  color-scheme: dark;
+
+  --bg:               #0a0705;
+  --surface:          #120d0a;
+  --surface-elevated: #1a130e;
+
+  --text-primary:     #f3ece4;
+  --text-secondary:   #b5a899;
+  --text-muted:       #857868;
+
+  --border:           #2a201a;
+  --border-strong:    #43332a;
+
+  --accent:           #f0a04b;
+  --accent-hover:     #f5b972;
+  --accent-contrast:  #0a0705;
+
+  --success:          #86b878;
+  --warning:          #e0b04a;
+  --danger:           #e0705a;
+
+  --focus-ring:       0 0 0 2px #0a0705, 0 0 0 4px #f0a04b;
+
+  --grid:             rgba(240, 160, 75, .045);
+  --grain-opacity:    .05;
+
+  --shadow-1:         none;
+  --shadow-2:         0 8px 24px rgba(0, 0, 0, .55);
+
+  --chart-1:          #f0a04b;
+  --chart-2:          #b5a899;
+  --chart-3:          #86b878;
+
+  --selection-bg:     rgba(240, 160, 75, .2);
+  --selection-color:  #f3ece4;
+
+  --scrollbar-track:  #120d0a;
+  --scrollbar-thumb:  #43332a;
+}
+
+/* ── Sage ───────────────────────────────────────────────────────────── */
+[data-theme="sage"] {
+  color-scheme: dark;
+
+  --bg:               #070b09;
+  --surface:          #0d1310;
+  --surface-elevated: #131b17;
+
+  --text-primary:     #e9efe9;
+  --text-secondary:   #a5b3a8;
+  --text-muted:       #78887c;
+
+  --border:           #1d2822;
+  --border-strong:    #2f3f36;
+
+  --accent:           #9cc9a8;
+  --accent-hover:     #b6dbc0;
+  --accent-contrast:  #070b09;
+
+  --success:          #7fcf99;
+  --warning:          #d3b062;
+  --danger:           #dd7d76;
+
+  --focus-ring:       0 0 0 2px #070b09, 0 0 0 4px #9cc9a8;
+
+  --grid:             rgba(156, 201, 168, .045);
+  --grain-opacity:    .05;
+
+  --shadow-1:         none;
+  --shadow-2:         0 8px 24px rgba(0, 0, 0, .55);
+
+  --chart-1:          #9cc9a8;
+  --chart-2:          #a5b3a8;
+  --chart-3:          #7fcf99;
+
+  --selection-bg:     rgba(156, 201, 168, .2);
+  --selection-color:  #e9efe9;
+
+  --scrollbar-track:  #0d1310;
+  --scrollbar-thumb:  #2f3f36;
+}

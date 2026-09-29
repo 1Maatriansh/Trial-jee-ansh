@@ -1,0 +1,245 @@
+/* Ansh JEE — App Shell Styles
+ * Layout for the main app: rail, header, bottom bar, content area.
+ * Mobile-first, 360px upward.
+ */
+
+/* ── App root wrapper ── */
+.app-root {
+  display: flex;
+  min-height: 100dvh;
+  background-color: var(--bg);
+}
+
+/* ── Navigation rail (desktop) ── */
+.rail {
+  display: none; /* hidden on mobile */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--rail-w);
+  z-index: var(--z-rail);
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--dur-3) var(--ease-out-expo);
+  overflow: hidden;
+}
+
+.rail:is(:hover, [data-open="true"]) {
+  width: var(--rail-w-open);
+}
+
+@media (max-width: 767px) {
+  .rail {
+    display: none;
+  }
+}
+
+/* ── App main content area ── */
+.app-main {
+  flex: 1;
+  min-width: 0;
+  padding-top: var(--header-h);
+  padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+  .app-main {
+    padding-left: var(--rail-w);
+    padding-top: var(--header-h-lg);
+    padding-bottom: 0;
+  }
+}
+
+/* ── App header ── */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  z-index: var(--z-header);
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--s-4);
+  gap: var(--s-3);
+}
+
+@media (min-width: 768px) {
+  .app-header {
+    left: var(--rail-w);
+    height: var(--header-h-lg);
+    padding: 0 var(--s-6);
+  }
+}
+
+/* ── Bottom tab bar (mobile only) ── */
+.bottom-bar {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--bottombar-h) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: var(--z-rail);
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+  .bottom-bar {
+    display: none;
+  }
+}
+
+/* ── Content container ── */
+.content-wrap {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--s-5) var(--s-4);
+}
+
+@media (min-width: 768px) {
+  .content-wrap {
+    padding: var(--s-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-wrap {
+    padding: var(--s-7) var(--s-8);
+  }
+}
+
+/* ── App footer ── */
+.app-footer {
+  border-top: 1px solid var(--border);
+  padding: var(--s-6) var(--s-4);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .app-footer {
+    padding: var(--s-6) var(--s-8);
+  }
+}
+
+/* ── Page transition wrapper ── */
+.page-enter {
+  animation: page-in var(--dur-3) var(--ease-out-expo) both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── View Transitions API ── */
+@keyframes reveal-in {
+  from { clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%)); }
+  to   { clip-path: circle(150% at var(--vt-x, 50%) var(--vt-y, 50%)); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 12px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes sheet-up {
+  from { opacity: 0; transform: translateY(100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes modal-fade {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media (min-width: 768px) {
+  [role="dialog"] {
+    align-items: center !important;
+  }
+  .modal-surface {
+    border-radius: var(--r-3) !important;
+    animation: modal-fade var(--dur-2) var(--ease-out-expo) both !important;
+  }
+  .sheet-handle {
+    display: none !important;
+  }
+}
+
+/* ── Content Protection & Watermark (Section 29D) ── */
+.notes-content-container,
+.pyq-content-container,
+.formula-content-container {
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+}
+
+.notes-content-container::after {
+  content: "ANSH JEE · STUDY WORKSPACE";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+[data-theme="paper"] .notes-content-container::after {
+  color: rgba(0, 0, 0, 0.035);
+}
+
+@media print {
+  .notes-content-container,
+  .pyq-content-container,
+  .formula-content-container {
+    display: none !important;
+  }
+}
+
+::view-transition-new(root) {
+  animation: reveal-in var(--dur-4) var(--ease-out-expo) both;
+}
+
+::view-transition-old(root) {
+  animation: fade-in var(--dur-3) var(--ease-standard) reverse both;
+}

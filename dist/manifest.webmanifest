@@ -1,0 +1,16 @@
+{
+  "name": "Ansh JEE",
+  "short_name": "Ansh JEE",
+  "description": "A focused preparation space for JEE aspirants — learn, practice, solve PYQs, take tests, focus, and track progress.",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
